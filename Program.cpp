@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-int encryptMessage (std::string message, int ShiftValue)
+void encryptMessage (std::string message, int ShiftValue)
 {
     std::string encrypted;
 
@@ -30,7 +30,7 @@ int encryptMessage (std::string message, int ShiftValue)
     std::cout << "Encrypted Message: "<< encrypted << std::endl;
 }
 
-int decryptMessage (std::string message, int ShiftValue)
+void decryptMessage (std::string message, int ShiftValue)
 {
     std::string decrypted ;
     
@@ -64,13 +64,14 @@ int main() {
     std::cout << "Do you want to encrypt or decrypt a message? (Enter 'e' or 'd'): ";
     char choice;
     std::cin >> choice;
+    std::cin.ignore();
 
     std::cout << "Enter the message you would like to encrypt or decrypt: ";
-    //std::getline(std::cin, message);
-    std::cin >> message;
+    std::getline(std::cin, message);
 
     std::cout << "Enter the shift value:";
     std::cin >> ShiftValue;
+    std::cin.ignore();
 
     if (choice == 'e' || choice == 'E')
     {
